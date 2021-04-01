@@ -46,8 +46,8 @@ namespace BookAPI.Repositories
 
         public async Task Update(Book model)
         {
-            var book = await _context.Books.FindAsync(model.Id);
-            _context.Entry(book).State = EntityState.Modified;
+            //var book = await _context.Books.FindAsync(model.Id);
+            _context.Entry(model).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
 
