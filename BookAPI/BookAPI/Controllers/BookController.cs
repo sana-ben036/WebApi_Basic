@@ -45,7 +45,7 @@ namespace BookAPI.Controllers
         public async Task<ActionResult<Book>> Post([FromBody] Book book)
         {
             var newbook = await bookRepository.Create(book);
-            return CreatedAtAction("Get()", new { id = newbook.Id }, newbook);
+            return CreatedAtAction(nameof(Details), new { id = newbook.Id }, newbook);
         }
 
         // PuT: BooksController/Update
